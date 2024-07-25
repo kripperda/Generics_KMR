@@ -1,0 +1,38 @@
+package main;
+import linkedlist.GenericNode;
+import linkedlist.GenericLinkedList;
+
+public class GenericTestLinkedList {
+
+	public static <T> void main(String[] args) {
+		
+		GenericLinkedList<T> myList=new GenericLinkedList<T>();
+		
+		GenericNode<Integer> aNode=new GenericNode<Integer>();
+		aNode.setData("Element 1");
+		myList.addNode(aNode);
+		aNode = new GenericNode<Integer>();
+		aNode.setData("Element 2");
+		myList.addNode(aNode);
+		
+		GenericNode<?> tempnode=myList.getList();
+		do 
+		{
+			System.out.println(tempnode.getData());
+			tempnode=tempnode.getNextNode();
+		} while (tempnode!=null);
+
+		GenericLinkedList<Integer> gll1 = new GenericLinkedList<Integer>();
+		System.out.println(gll1.toString());
+		
+		GenericLinkedList<Double> gll2 = new GenericLinkedList<Double>();
+		System.out.println(gll2.toString());
+		
+		GenericLinkedList<String> gll3 = new GenericLinkedList<String>("Deadpool","Wolverine");
+		System.out.println(gll3.toString());
+		
+		
+		
+	}//end main
+
+}//end class
